@@ -221,6 +221,7 @@ L.Motion.Animate = {
     motionStop: function (animEnded) {
 		this.motionPause();
 		this.setLatLngs(this._linePoints);
+		this._drawMarker(this._linePoints[this._linePoints.length - 1]);
 		this.__ellapsedTime = null;
 		this._removeMarker(animEnded);
 		this.fire(L.Motion.Event.Ended, {layer: this}, false);
